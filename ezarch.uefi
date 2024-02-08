@@ -187,7 +187,7 @@ mkpartsd () {
   dd bs=512 if=/dev/zero of=/dev/"${TRGTDRV}" count=8192
   dd bs=512 if=/dev/zero of=/dev/"${TRGTDRV}" count=8192 seek=$((`blockdev --getsz /dev/"${TRGTDRV}"` - 8192))
   sgdisk -og /dev/"${TRGTDRV}"
-  sgdisk -n 0:0:+1000MiB -t 0:ef00 -c 0:efi /dev/"${TRGTDRV}"
+  sgdisk -n 0:0:+1024MiB -t 0:ef00 -c 0:efi /dev/"${TRGTDRV}"
   sgdisk -n 0:0:+"${SWPSIZE}" -t 0:8200 -c 0:swap /dev/"${TRGTDRV}"
   sgdisk -n 0:0:+"${RTSIZE}" -t 0:8303 -c 0:root /dev/"${TRGTDRV}"
   sgdisk -n 0:0:0 -t 0:8302 -c 0:home /dev/"${TRGTDRV}"
@@ -231,7 +231,7 @@ mkpartnv () {
   dd bs=512 if=/dev/zero of=/dev/"${TRGTDRV}" count=8192
   dd bs=512 if=/dev/zero of=/dev/"${TRGTDRV}" count=8192 seek=$((`blockdev --getsz /dev/"${TRGTDRV}"` - 8192))
   sgdisk -og /dev/"${TRGTDRV}"
-  sgdisk -n 0:0:+1000MiB -t 0:ef00 -c 0:efi /dev/"${TRGTDRV}"
+  sgdisk -n 0:0:+1024MiB -t 0:ef00 -c 0:efi /dev/"${TRGTDRV}"
   sgdisk -n 0:0:+"${SWPSIZE}" -t 0:8200 -c 0:swap /dev/"${TRGTDRV}"
   sgdisk -n 0:0:+"${RTSIZE}" -t 0:8303 -c 0:root /dev/"${TRGTDRV}"
   sgdisk -n 0:0:0 -t 0:8302 -c 0:home /dev/"${TRGTDRV}"
