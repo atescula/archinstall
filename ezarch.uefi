@@ -373,7 +373,7 @@ instgen () {
 
 instmedia () {
   clear
-  #pacstrap /mnt alsa-lib alsa-plugins alsa-firmware alsa-utils audacious audacious-plugins cdrdao dvdauthor faac faad2 ffmpeg ffmpegthumbnailer flac frei0r-plugins gstreamer gst-libav gst-plugins-base gst-plugins-good gst-plugins-bad gst-plugins-ugly gstreamer-vaapi imagemagick lame libdvdcss libopenraw mencoder mjpegtools mpv poppler-glib pulseaudio pulseaudio-alsa pulseaudio-bluetooth pulseaudio-equalizer pulseaudio-jack sox smplayer x265 x264 xvidcore
+  #pacstrap /mnt alsa-lib alsa-plugins alsa-firmware alsa-utils cdrdao dvdauthor faac faad2 ffmpeg ffmpegthumbnailer flac frei0r-plugins gstreamer gst-libav gst-plugins-base gst-plugins-good gstreamer-vaapi imagemagick lame libdvdcss libopenraw mencoder mjpegtools mpv poppler-glib pulseaudio pulseaudio-alsa pulseaudio-bluetooth pulseaudio-equalizer pulseaudio-jack sox smplayer x265 x264 xvidcore
   clear
 
   pacstrap /mnt pipewire-alsa pipewire-jack pipewire-pulse gst-plugin-pipewire libpulse wireplumber ffmpeg ffmpegthumbnailer flac frei0r-plugins imagemagick lame libdvdcss libopenraw mencoder mjpegtools mpv
