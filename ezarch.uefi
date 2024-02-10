@@ -433,7 +433,7 @@ instlxqt () {
 
 instkde () {
 clear
-  pacstrap /mnt plasma-wayland-session accountsservice ark audiocd-kio bluedevil breeze-gtk breeze-icons discover dolphin guvcview gwenview k3b kcalc kate kdeconnect kde-gtk-config khotkeys kinfocenter kinit kio-fuse konsole kscreen kwallet-pam kwayland-integration kwin meld neofetch okular oxygen packagekit-qt5 papirus-icon-theme pavucontrol-qt plasma-browser-integration plasma-desktop plasma-disks plasma-nm plasma-pa plasma-systemmonitor plasma-vault plasma-workspace-wallpapers powerdevil print-manager qbittorrent sddm sddm-kcm solid5 sweeper spectacle xdg-desktop-portal-kde xsettingsd baloo-widgets dolphin-plugins ffmpegthumbs kde-inotify-survey kdeconnect-kde kdegraphics-thumbnailers kdenetwork-filesharing kio-admin kio-extras kio-fuse kio-gdrive phonon-vlc xwaylandvideobridge power-profiles-daemon vlc
+  pacstrap /mnt plasma-wayland-session accountsservice ark audiocd-kio bluedevil breeze-gtk breeze-icons discover dolphin guvcview gwenview k3b kcalc kate kdeconnect kde-gtk-config khotkeys kinfocenter kinit kio-fuse konsole kscreen kwallet-pam kwayland-integration kwin meld neofetch okular oxygen packagekit-qt5 papirus-icon-theme pavucontrol-qt plasma-browser-integration plasma-desktop plasma-disks plasma-nm plasma-pa plasma-systemmonitor plasma-vault plasma-workspace-wallpapers powerdevil print-manager qbittorrent sddm sddm-kcm solid5 sweeper spectacle xdg-desktop-portal-kde xsettingsd baloo-widgets dolphin-plugins ffmpegthumbs kde-inotify-survey kdegraphics-thumbnailers kdenetwork-filesharing kio-admin kio-extras kio-fuse kio-gdrive phonon-qt5-vlc phonon-qt6-vlc xwaylandvideobridge vlc libappindicator-gtk3
 
   sleep 2
   arch-chroot /mnt systemctl enable sddm.service
