@@ -272,7 +272,7 @@ mntpartnv () {
 
 psbase () {
   clear
-  pacstrap /mnt base base-devel cryptsetup curl dbus-broker dbus-broker-units dialog e2fsprogs device-mapper dhcpcd dosfstools efibootmgr gptfdisk grub less linux linux-lts linux-firmware linux-headers linux-lts-headers lvm2 mkinitcpio mtools nano nvme-cli reflector rsync sysfsutils xz zstd
+  pacstrap /mnt base base-devel cryptsetup curl dbus-broker dbus-broker-units dialog e2fsprogs device-mapper dhcpcd dosfstools efibootmgr gptfdisk grub less linux linux-firmware linux-headers lvm2 mkinitcpio mtools nano nvme-cli reflector rsync sysfsutils xz zstd
   clear
   echo -e "\n"
   echo "Pacstrap base system complete..."
@@ -338,7 +338,7 @@ instgrub () {
   arch-chroot /mnt grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=GRUB --recheck
   arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
   #arch-chroot /mnt mkinitcpio -p linux-lts
-  arch-chroot /mnt mkinitcpio -P
+  arch-chroot /mnt mkinitcpio -p linux
   clear
   echo -e "\n"
   echo "Grub installed & mkinicpio run..."
@@ -373,8 +373,12 @@ instgen () {
 
 instmedia () {
   clear
-  pacstrap /mnt alsa-lib alsa-plugins alsa-firmware alsa-utils audacious audacious-plugins cdrdao dvdauthor faac faad2 ffmpeg ffmpegthumbnailer flac frei0r-plugins gstreamer gst-libav gst-plugins-base gst-plugins-good gst-plugins-bad gst-plugins-ugly gstreamer-vaapi imagemagick lame libdvdcss libopenraw mencoder mjpegtools mpv poppler-glib pulseaudio pulseaudio-alsa pulseaudio-bluetooth pulseaudio-equalizer pulseaudio-jack sox smplayer x265 x264 xvidcore
+  #pacstrap /mnt alsa-lib alsa-plugins alsa-firmware alsa-utils audacious audacious-plugins cdrdao dvdauthor faac faad2 ffmpeg ffmpegthumbnailer flac frei0r-plugins gstreamer gst-libav gst-plugins-base gst-plugins-good gst-plugins-bad gst-plugins-ugly gstreamer-vaapi imagemagick lame libdvdcss libopenraw mencoder mjpegtools mpv poppler-glib pulseaudio pulseaudio-alsa pulseaudio-bluetooth pulseaudio-equalizer pulseaudio-jack sox smplayer x265 x264 xvidcore
   clear
+
+  pacstrap /mnt pipewire-alsa pipewire-jack pipewire-pulse gst-plugin-pipewire libpulse wireplumber ffmpeg ffmpegthumbnailer flac frei0r-plugins imagemagick lame libdvdcss libopenraw mencoder mjpegtools mpv
+
+
   echo -e "\n"
   echo "Multimedia packages installed..."
   sleep 2
@@ -383,7 +387,7 @@ instmedia () {
 
 instnet () {
   clear
-  pacstrap /mnt avahi b43-fwcutter broadcom-wl-dkms dhclient dmraid dnsmasq dnsutils ethtool falkon filezilla inetutils iwd net-tools netctl networkmanager networkmanager-openvpn network-manager-applet nm-connection-editor nfs-utils nilfs-utils nss-mdns openbsd-netcat openconnect openresolv openssh openssl openvpn r8168-lts samba vsftpd wget wireless-regdb wireless_tools whois wpa_supplicant
+  pacstrap /mnt avahi b43-fwcutter broadcom-wl-dkms dhclient dmraid dnsmasq dnsutils ethtool filezilla inetutils iwd net-tools netctl networkmanager networkmanager-openvpn network-manager-applet nm-connection-editor nfs-utils nilfs-utils nss-mdns openbsd-netcat openconnect openresolv openssh openssl openvpn r8168-lts samba vsftpd wget wireless-regdb wireless_tools whois wpa_supplicant
   sleep 2
   arch-chroot /mnt systemctl enable NetworkManager.service
   clear
@@ -395,7 +399,7 @@ instnet () {
 
 instfonts () {
   clear
-  pacstrap /mnt ttf-ubuntu-font-family ttf-dejavu ttf-bitstream-vera ttf-liberation noto-fonts ttf-roboto ttf-opensans opendesktop-fonts cantarell-fonts freetype2
+  pacstrap /mnt ttf-ubuntu-font-family ttf-dejavu ttf-bitstream-vera ttf-liberation noto-fonts ttf-roboto ttf-opensans opendesktop-fonts cantarell-fonts freetype2 ttf-jetbrains-mono
   clear
   echo -e "\n"
   echo "Fonts packages installed..."
@@ -429,7 +433,7 @@ instlxqt () {
 
 instkde () {
 clear
-  pacstrap /mnt accountsservice ark audiocd-kio bluedevil breeze-gtk breeze-icons discover dolphin geany guvcview gwenview k3b kcalc kate kdeconnect kde-gtk-config khotkeys kinfocenter kinit kio-fuse konsole kscreen kwallet-pam kwayland-integration kwin meld neofetch okular oxygen packagekit-qt5 papirus-icon-theme pavucontrol-qt plasma-browser-integration plasma-desktop plasma-disks plasma-nm plasma-pa plasma-systemmonitor plasma-vault plasma-workspace-wallpapers powerdevil print-manager qbittorrent sddm sddm-kcm solid5 sweeper spectacle xdg-desktop-portal-kde xsettingsd
+  pacstrap /mnt accountsservice ark audiocd-kio bluedevil breeze-gtk breeze-icons discover dolphin guvcview gwenview k3b kcalc kate kdeconnect kde-gtk-config khotkeys kinfocenter kinit kio-fuse konsole kscreen kwallet-pam kwayland-integration kwin meld neofetch okular oxygen packagekit-qt5 papirus-icon-theme pavucontrol-qt plasma-browser-integration plasma-desktop plasma-disks plasma-nm plasma-pa plasma-systemmonitor plasma-vault plasma-workspace-wallpapers powerdevil print-manager qbittorrent sddm sddm-kcm solid5 sweeper spectacle xdg-desktop-portal-kde xsettingsd
   sleep 2
   arch-chroot /mnt systemctl enable sddm.service
   clear
