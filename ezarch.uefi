@@ -112,6 +112,9 @@ swapsize () {
     8|8G|8g)
     SWPSIZE=8Gib
     ;;
+    16|16G|16g)
+    SWPSIZE=16Gib
+    ;;
     *)
     echo "Invalid input..."
     sleep 2
@@ -139,6 +142,9 @@ rootsize () {
     ;;
     60|60G|60g)
     RTSIZE=60Gib
+    ;;
+    80|80G|80g)
+    RTSIZE=80Gib
     ;;
     *)
     echo "Invalid input..."
@@ -387,7 +393,7 @@ instmedia () {
 
 instnet () {
   clear
-  pacstrap /mnt avahi b43-fwcutter broadcom-wl-dkms dhclient dmraid dnsmasq dnsutils ethtool filezilla inetutils iwd net-tools netctl networkmanager networkmanager-openvpn network-manager-applet nm-connection-editor nfs-utils nilfs-utils nss-mdns openbsd-netcat openconnect openresolv openssh openssl openvpn r8168-lts samba vsftpd wget wireless-regdb wireless_tools whois wpa_supplicant
+  pacstrap /mnt avahi b43-fwcutter broadcom-wl-dkms dhclient dmraid dnsmasq dnsutils ethtool filezilla inetutils iwd net-tools netctl networkmanager networkmanager-openvpn network-manager-applet nm-connection-editor nfs-utils nilfs-utils nss-mdns openbsd-netcat openconnect openresolv openssh openssl openvpn r8168 samba vsftpd wget wireless-regdb wireless_tools whois wpa_supplicant
   sleep 2
   arch-chroot /mnt systemctl enable NetworkManager.service
   clear
@@ -421,7 +427,7 @@ instprint () {
 
 instlxqt () {
   clear
-  pacstrap /mnt accountsservice aisleriot brightnessctl breeze-icons featherpad geany guvcview k3b kwin liblxqt libstatgrab libsysstat lximage-qt lxqt-about lxqt-admin lxqt-archiver lxqt-build-tools lxqt-config lxqt-globalkeys lxqt-notificationd lxqt-openssh-askpass lxqt-panel lxqt-policykit lxqt-powermanagement lxqt-qtplugin lxqt-runner lxqt-session lxqt-sudo lxqt-themes meld fastfetch pcmanfm-qt pavucontrol-qt print-manager qbittorrent qterminal screengrab sddm xdg-desktop-portal-lxqt xpdf xscreensaver
+  pacstrap /mnt accountsservice brightnessctl breeze-icons featherpad geany guvcview k3b kwin liblxqt libstatgrab libsysstat lximage-qt lxqt-about lxqt-admin lxqt-archiver lxqt-build-tools lxqt-config lxqt-globalkeys lxqt-notificationd lxqt-openssh-askpass lxqt-panel lxqt-policykit lxqt-powermanagement lxqt-qtplugin lxqt-runner lxqt-session lxqt-sudo lxqt-themes meld fastfetch pcmanfm-qt pavucontrol-qt print-manager qbittorrent qterminal screengrab sddm xdg-desktop-portal-lxqt xpdf xscreensaver
   sleep 2
   arch-chroot /mnt systemctl enable sddm.service
   clear
@@ -446,7 +452,7 @@ clear
 
 instxfce () {
   clear
-  pacstrap /mnt accountsservice adapta-gtk-theme aisleriot arc-gtk-theme arc-icon-theme asunder blueman catfish dconf-editor galculator geany gnome-firmware gnome-packagekit gtk-engine-murrine guvcview meld neofetch pavucontrol polkit-gnome sddm transmission-gtk xarchiver xdg-desktop-portal-gtk xfburn xfce4 xfce4-goodies xpdf
+  pacstrap /mnt accountsservice adapta-gtk-theme arc-gtk-theme arc-icon-theme asunder blueman catfish dconf-editor galculator geany gnome-firmware gnome-packagekit gtk-engine-murrine guvcview meld neofetch pavucontrol polkit-gnome sddm transmission-gtk xarchiver xdg-desktop-portal-gtk xfburn xfce4 xfce4-goodies xpdf
   sleep 2
   arch-chroot /mnt systemctl enable sddm.service
   clear
@@ -458,7 +464,7 @@ instxfce () {
 
 instmate () {
   clear
-  pacstrap /mnt accountsservice adapta-gtk-theme aisleriot arc-gtk-theme arc-icon-theme asunder blueman brasero dconf-editor geany gnome-firmware gnome-packagekit gtk-engine-murrine guvcview mate mate-applet-dock mate-extra mate-polkit meld neofetch sddm transmission-gtk xdg-desktop-portal-gtk
+  pacstrap /mnt accountsservice adapta-gtk-theme arc-gtk-theme arc-icon-theme asunder blueman brasero dconf-editor geany gnome-firmware gnome-packagekit gtk-engine-murrine guvcview mate mate-applet-dock mate-extra mate-polkit meld neofetch sddm transmission-gtk xdg-desktop-portal-gtk
   sleep 2
   arch-chroot /mnt systemctl enable sddm.service
   clear
@@ -470,7 +476,7 @@ instmate () {
 
 instcinn () {
   clear
-  pacstrap /mnt accountsservice adwaita-icon-theme adapta-gtk-theme aisleriot arc-gtk-theme arc-icon-theme asunder blueman brasero cinnamon cinnamon-translations dconf-editor file-roller geany gnome-firmware gnome-packagekit gnome-terminal gsound gtk-engine-murrine guvcview meld nemo nemo-fileroller nemo-share neofetch pavucontrol polkit-gnome sddm tldr tmux transmission-gtk viewnior xdg-desktop-portal-gtk xed xpdf
+  pacstrap /mnt accountsservice adwaita-icon-theme adapta-gtk-theme arc-gtk-theme arc-icon-theme asunder blueman brasero cinnamon cinnamon-translations dconf-editor file-roller geany gnome-firmware gnome-packagekit gnome-terminal gsound gtk-engine-murrine guvcview meld nemo nemo-fileroller nemo-share neofetch pavucontrol polkit-gnome sddm tldr tmux transmission-gtk viewnior xdg-desktop-portal-gtk xed xpdf
   sleep 2
   arch-chroot /mnt systemctl enable sddm.service
   clear
