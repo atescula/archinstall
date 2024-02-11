@@ -190,6 +190,7 @@ trgtdrvnv () {
   clear
   echo -e "\n"
   echo "Target device set to "${TRGTDRV}"..."
+  read -n 1 -s -r -p "Press any key to continue"
   sleep 2
   clear
 }
