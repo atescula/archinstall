@@ -227,8 +227,8 @@ frmtpartsd () {
 mntpartsd () {
   clear
   mount /dev/"${TRGTDRV}"\3 /mnt
-  mkdir /mnt/efi
-  mount /dev/"${TRGTDRV}"\1 /mnt/efi
+  mkdir /mnt/boot
+  mount /dev/"${TRGTDRV}"\1 /mnt/boot
   mkdir /mnt/home
   mount /dev/"${TRGTDRV}"\4 /mnt/home
   swapon /dev/"${TRGTDRV}"\2
@@ -271,8 +271,8 @@ frmtpartnv () {
 mntpartnv () {
   clear
   mount /dev/"${TRGTDRV}"\p3 /mnt
-  mkdir /mnt/efi
-  mount /dev/"${TRGTDRV}"\p1 /mnt/efi
+  mkdir /mnt/boot
+  mount /dev/"${TRGTDRV}"\p1 /mnt/boot
   mkdir /mnt/home
   mount /dev/"${TRGTDRV}"\p4 /mnt/home
   swapon /dev/"${TRGTDRV}"\p2
@@ -348,7 +348,7 @@ sysconfig () {
 instgrub () {
   clear
   echo -e "\n"
-  arch-chroot /mnt grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=GRUB --recheck
+  arch-chroot /mnt grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB --recheck
   arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
   #arch-chroot /mnt mkinitcpio -p linux-lts
   arch-chroot /mnt mkinitcpio -P
