@@ -101,8 +101,11 @@ hstname () {
 swapsize () {
   clear
   echo -e "\n"
-  read -p "Pick Swap Partition Size (2G, 4G, or 8G): " SWPSIZE
+  read -p "Pick Swap Partition Size (1G, 2G, 4G, 8G or 16G): " SWPSIZE
   case $SWPSIZE in
+    1|1G|1g)
+    SWPSIZE=1GiB
+    ;;
     2|2G|2g)
     SWPSIZE=2GiB
     ;;
@@ -132,8 +135,11 @@ swapsize () {
 rootsize () {
   clear
   echo -e "\n"
-  read -p "Pick Root Partition Size (20G, 40G, or 60G): " RTSIZE
+  read -p "Pick Root Partition Size (8GB, 20G, 40G, 60G or 80G): " RTSIZE
   case $RTSIZE in
+    8|8G|8g)
+    RTSIZE=8GiB
+    ;;
     20|20G|20g)
     RTSIZE=20GiB
     ;;
